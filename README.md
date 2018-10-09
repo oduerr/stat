@@ -1,2 +1,2 @@
 # stat
-Bits and pieces in statistc
+Bits and pieces in statistic
