@@ -1,0 +1,106 @@
+---
+title: "From Poisson to Exp"
+author: "Oliver Dürr"
+date: "11/20/2018"
+output:
+  powerpoint_presentation:
+    reference_doc: /Users/oli/Dropbox/__HTWG/Statistic/Template_Vorlesung.pptx
+  ioslides_presentation: default
+  beamer_presentation: default
+  slidy_presentation: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+height = 3
+width  = 6
+```
+
+## Herleitung der Exponentialverteilung
+- Server im Mittel 100 Anfragen / Tag (unabhängig von Tageszeit und vorigen Ereignissen).
+  +  Poisson Verteilung mit $\lambda = 100$
+ 
+```{r, fig.height=height,fig.width=width, echo=TRUE}
+plot(0:300, dpois(0:300, lambda = 100), type='h', xlab='Anzahl Anfragen an einem Tag')
+```
+
+## Herleitung der Exponentialverteilung
+- Server im Mittel 100 Anfragen / Tag (unabhängig von Tageszeit und vorigen Ereignissen).
+  + Poisson Verteilung mit $\lambda = 100$
+ 
+- Es ist in Ordnung die Verteilung pro Stunde, Minute und Sekunde usw. zu betrachten.
+- Die Vorraussetzungen bleiben erhalten, nur die erwartete Anzahl ändert sich.
+- $\lambda$ ist der Erwartungswert der Poissonverteilung
+- $\lambda_{\tt tag} = 100 \rightarrow \lambda_{\tt stunde} = 100/24 \rightarrow \lambda_{\tt minute} = 100/(24*60) \ldots$ 
+
+## Zoom: Anfragen pro Stunde
+- $\lambda = 100 \rightarrow \lambda = 100/24$ 
+
+```{r, fig.height=height, fig.width=width, echo=TRUE}
+plot(0:300, dpois(0:300, lambda = 100/24), type='h', xlab='Anzahl Anfragen in einer Stunde')
+```
+
+## Zoom: Anfragen pro Minute
+- $\lambda = 100 \rightarrow \lambda = 100/24$ 
+
+```{r, fig.height=height, fig.width=width, echo=TRUE}
+plot(0:300, dpois(0:300, lambda = 100/(24*60)), type='h', xlab='Anzahl Anfragen in einer Minute')
+```
+
+## Zoom: Anfragen pro Sekunde
+- $\lambda = 100 \rightarrow \lambda = 100/(24*60*60)$ 
+
+```{r, fig.height=height, fig.width=width, echo=TRUE}
+plot(0:300, dpois(0:300, lambda = 100/(24*60*60)), type='h', xlab='Anzahl Anfragen einer Sekunde')
+```
+
+## Zu welchen Zeiten gibt es eine Anfrage (Simulation)?
+
+- Zeitpunkte an denen eine Anfrage stattgefunden hat
+- Simulation mit `rpois(..., lambda = 100/86400)`
+
+```{r, fig.height=height, fig.width=width}
+simu = rpois(0:86400, lambda = 100/86400) 
+  plot(0:86400, simu, type='h', 
+       main='Serveranfragen an einem Tag (Simulation)',
+       xlab = 'Sekunden'
+       )
+```
+
+
+## Dauer zwischen 2 Anfragen?
+
+- Dauer zwischen 2 Anfragen kann man als stetig ansehen
+  + Noch zwischen 0 und 84600, können aber zu bel. kleinen Einheiten gehen 
+```{r, fig.height=height, fig.width=width}
+  times = (0:86400)[simu == 1]
+  diffs = diff(times)
+  hist(diffs,20, freq = FALSE)
+```
+
+## Längere Beobachtungszeitraum (1 Jahr)
+```{r, fig.height=height, fig.width=width}
+  simu = rpois(0:(365*86400), lambda = 100/86400) 
+  times = (0:(86400*365))[simu == 1]
+  diffs = diff(times)
+  hist(diffs,90, freq = FALSE)
+```
++ Kennen Sie diese Funktion?
+
+## Exponentialfunktion
+```{r, fig.height=height, fig.width=width, echo=TRUE}
+  hist(diffs,90, freq = FALSE)
+  lines(0:4000, dexp(0:4000, rate=1.0/mean(diffs)))
+  #Trick mit 1/means(diffs) später
+```
+## Exponentialfunktion
+```{r, fig.height=height, fig.width=width, echo=TRUE}
+  1/mean(diffs)
+  100/84600
+```
+
+
+
+
+
+
