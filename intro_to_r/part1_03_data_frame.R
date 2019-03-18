@@ -1,10 +1,3 @@
-# Data Frames are build in
-# or use
-# install.packages('tidyverse')
-library(tibble) #tibble modern data frames (with better printing)
-
-
-
 # 3 Vectors
 n = c(2, 3, 5) 
 s = c("aa", "bb", "cc") 
@@ -15,8 +8,7 @@ df = data.frame(n, s, b, o)
 df[1,1:4]
 df$n
 
-df = tibble(n, s, b, o)
-#
+
 
 # Printing
 df
@@ -25,8 +17,7 @@ View(df) #or double clicking
 
 # Build in Data Frames
 #df = iris #For old behaviour
-df = as.tibble(iris)
-df
+df = iris
 str(df)
 
 # Dimensions
