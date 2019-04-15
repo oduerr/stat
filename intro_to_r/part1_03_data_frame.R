@@ -1,13 +1,15 @@
 # 3 Vectors
-n = c(2, 3, 5) 
+n = c(2.0, 3, 5) 
 s = c("aa", "bb", "cc") 
 b = c(TRUE, FALSE, TRUE) 
 o = as.ordered(11:13)
 df = data.frame(n, s, b, o) 
+str(df)
+View(df) #or double clicking
 
 df[1,1:4]
+df[,1]
 df$n
-
 
 
 # Printing

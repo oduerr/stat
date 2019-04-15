@@ -11,13 +11,14 @@ SD_X = 5
 SD_Y = abs(a) * SD_X #9
 
 # Simulationsstudie
-set.seed(42)
+set.seed(42) 
 X = rnorm(10000,10,5)
 mean(X) # 9.94
 sd(X)   # 5.03
 hist(X,100)
 
-Y = a*X + b #Gilt fuer alle Datenpunkte 
+Y = -10*X + 5 #Gilt fuer alle Datenpunkte 
 hist(Y, 100)
 mean(Y) # 49.89
 sd(Y)   #  9.05
+sd(X) * 10
