@@ -4,17 +4,25 @@ setwd("~/Documents/workspace/stat/descriptive")
 kdata <- read.table('kdata.txt.gz', header=T, sep="\t")
 
 ### Scaling
-plot(kdata$alter, kdata$einkauf)
+plot(kdata$alter, kdata$einkauf, pch='.')
 cor(kdata$alter, kdata$einkauf)
-ascale = scale(kdata$alter)
-hist(ascale)
-escale = scale(kdata$einkauf)
-n = length(ascale)
-mean(ascale*escale)*n/(n-1)
+
+
+y = scale(kdata$alter)
+hist(y)
+x = scale(kdata$einkauf)
+mean(y*x)
+n = length(x)
+mean(x*y)*n/(n-1)
 
 ### Random
-n = 10000
+n = 3
+x = rnorm(n)
+y = rnorm(n)
+plot(x,y)
 cor(rnorm(n), rnorm(n))
+
+
 
 n = 3
 for (i in 1:10) {
