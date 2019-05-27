@@ -33,7 +33,7 @@ plot(x=0:20, y=dpois(0:20, lambda=0.5), type="h")
 #### Poison Verteilung GW Binomial
 # 6-er Pasch bei 100 Würfen
 p = 1/36 
-n = 199
+n = 100
 x = 0:100 
 plot(x,dbinom(x,n,p), type='h')
 
