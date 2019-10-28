@@ -22,3 +22,20 @@ hist(Y, 100)
 mean(Y) # 49.89
 sd(Y)   #  9.05
 sd(X) * 10
+
+
+#################################
+# 
+library(MASS)
+summary(Boston$crim) 
+stripchart(Boston$crim, method="jitter")
+stripchart(log10(Boston$crim), method="jitter") 
+stripchart(Boston$crim, method="jitter", log='x') #Not 100% the same due to jitter
+
+hist(Boston$crim,30)
+hist(log(Boston$crim),30)
+
+
+
+
+
