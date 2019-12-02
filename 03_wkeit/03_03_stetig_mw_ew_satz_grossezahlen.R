@@ -1,0 +1,36 @@
+# Würfeln
+N=1000
+X = sample(1:6,N, replace = TRUE)
+avg = cumsum(X)/1:N #Gleitender MW
+plot(1:N, avg, type = 'l')
+abline(h=3.5, col='red')
+
+# Zahlen zwischen 1 und 6
+N=10000
+X = runif(N,1,6)
+avg = cumsum(X)/1:N
+plot(1:N, avg, type = 'l')
+abline(h=3.5)
+
+x = runif(1000000, min = 0, max =1)
+# 
+mean(x)      #Was kommt raus?
+hist(x,30,freq = FALSE)   
+plot(ecdf(x))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
