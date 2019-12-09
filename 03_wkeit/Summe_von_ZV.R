@@ -8,14 +8,17 @@ var(x)
 plot(table(x)/length(x), type='h')
 
 
-
 x = rep(NA, 10000)
 wid = 100
 for (i in 1:length(x)){
   x[i] = mean(runif(wid, 1, 6))
 }
 mean(x)
-var(x)
+mean(runif(100000,1,6)) # (6-1)/2
+var(x) 
+var(runif(100000,1,6)) # (6-1)^2/12 = 25/12 = 2.083
+2.08 / 100
+
 hist(x, freq = FALSE, 30)
 xs = seq(min(x),max(x),length.out = 100)
 lines(xs,dnorm(xs,mean(x),sd(x)))
