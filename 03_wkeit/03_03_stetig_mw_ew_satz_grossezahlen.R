@@ -1,6 +1,8 @@
 # Würfeln
-N=1000
+set.seed(42)
+N=10000
 X = sample(1:6,N, replace = TRUE)
+mean(X) #3.4998 
 avg = cumsum(X)/1:N #Gleitender MW
 plot(1:N, avg, type = 'l')
 abline(h=3.5, col='red')
