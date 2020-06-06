@@ -1,5 +1,4 @@
 #### Binomial Verteilung
-
 # Bsp Toto
 p = 0.333 
 n = 13

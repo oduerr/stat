@@ -1,3 +1,10 @@
+# Spielautomatsverteilung
+ps = c(0.977, 0.008, 0.008, 0.006, 0.001)
+xs = c(-1,4,9,14,19)
+sm = sample(xs, 1000000, replace = TRUE, prob = ps)
+mean(sm)
+var(sm)
+
 set.seed(42)
 N = 100000
 x = sample(1:6, N, replace = TRUE)
