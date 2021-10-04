@@ -10,7 +10,11 @@ xs = rdreieck(10000)
 hist(xs, freq = FALSE)
 curve(2*x,0,1, add=TRUE, col='red')
 
-mean(xs)
+mean(xs) #0.67
+var(xs) #0.05
+
+xs = runif(10000,0,1)
+mean(sin(exp(xs)+sin(xs))) #0.6218743
 
 
 
