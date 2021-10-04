@@ -28,7 +28,7 @@ nrow(df)
 
 # Selection
 df[1,1]
-df$Sepal.Length #Selection of columns
+df$Sepal.Length #!!!Use the Autocompletion!!!Selection of columns
 df$Sepal.Length[1] #Selection of columns
 
 # Subsetting
@@ -38,7 +38,5 @@ df[v,] #Only the ones for which v is TRUE
 
 #Deleting Column
 df$Species = NULL
-
-
 
 
