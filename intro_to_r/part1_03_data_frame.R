@@ -3,7 +3,7 @@ n = c(2.0, 3, 5)
 s = c("aa", "bb", "cc") 
 b = c(TRUE, FALSE, TRUE) 
 o = as.ordered(11:13)
-df = data.frame(n, s, b, o) 
+df = data.frame(nn=n, s, b, o) 
 str(df)
 View(df) #or double clicking
 
@@ -25,16 +25,18 @@ str(df)
 # Dimensions
 dim(df)
 nrow(df)
+ncol(df)
 
 # Selection
 df[1,1]
+df[,1]
 df$Sepal.Length #!!!Use the Autocompletion!!!Selection of columns
 df$Sepal.Length[1] #Selection of columns
 
 # Subsetting
 v = df$Species == 'setosa'
 v
-df[v,] #Only the ones for which v is TRUE
+df[df$Species == 'setosa',] #Only the ones for which v is TRUE
 
 #Deleting Column
 df$Species = NULL

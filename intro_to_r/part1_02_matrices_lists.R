@@ -1,12 +1,13 @@
 ## Matrices and Lists
 d = seq(1,12)
-m = matrix(d, nrow = 3, byrow = FALSE)
+m = matrix(d, nrow = 3, byrow = TRUE)
 dim(m) #3 4
 m
 
 ## Broadcasting, also in e.g. python 
 m * 10 #elemetwise
 exp(m) #elemetwise
+log(exp(m))
 m ^ 2
 
 ## Broadcasting with vectors
