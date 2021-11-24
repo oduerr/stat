@@ -5,10 +5,9 @@ sm = sample(xs, 1000000, replace = TRUE, prob = ps)
 mean(sm)
 var(sm)
 
-
 # Würfel
 set.seed(42)
-N = 100000
+N = 10000
 x = sample(1:6, N, replace = TRUE)
 
 #Abschaetzung von EW
@@ -25,3 +24,26 @@ mean(xg * x) #2.00234
 
 ##Augenzahl in Euro zum Quadrat, falls gerade Zahl
 mean(xg * x^2)#9.38124
+
+# Spiel
+gewinn = rep(NA, 1000)
+for (run in 1:length(gewinn)){
+  for (i in 1:10000){
+    if (sample(1:6,1) == 6){
+      gewinn[run] = i   
+      break
+    }
+  }  
+}
+hist(gewinn,30)
+mean(gewinn)
+
+#Ist Geometrische Verteilung, dort ist mean = 1/p
+
+k = 1:10
+plot(k, dbinom(k, size=10, prob = 0.4), type = 'h')
+
+
+
+
+

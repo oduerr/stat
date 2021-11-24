@@ -3,7 +3,7 @@ x = sample(1:6, 100, replace = TRUE)
 x[1:10]
 sum(x == 5) / 100
 ## Wiederholen und es kommt jedes mal was anderes raus
-mean(sample(1:6, 1000000, replace = TRUE) == 5)
+sum(sample(1:6, 100000000, replace = TRUE) == 5)/100000000
 # Je grösser N desto weniger wankelt es.
 
 #Limit N-> Infty
@@ -28,11 +28,18 @@ x1[1:3]
 x2[1:3]
 x12[1:3]
 sum(x12 > 8) / n #Schätzung nach Mises
+10/36
 
 
 
 
+#Simulatiomn
+erg = rep(NA, 100000)
+for (i in 1:100000){
+  erg[i] = sum(sample(1:5) == 1:5) > 0
+}
+sum(erg)/100000
 
-
+1 - 1/exp(1)
 
 

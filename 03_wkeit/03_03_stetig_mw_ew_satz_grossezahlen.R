@@ -1,11 +1,14 @@
 # Würfeln
+sum(1:6)/6 #3.5 EW
 set.seed(42)
-N=10000
+N=1000000
 X = sample(1:6,N, replace = TRUE)
 mean(X) #3.4998 
 avg = cumsum(X)/1:N #Gleitender MW
 plot(1:N, avg, type = 'l')
 abline(h=3.5, col='red')
+
+
 
 # Zahlen zwischen 1 und 6
 N=10000
