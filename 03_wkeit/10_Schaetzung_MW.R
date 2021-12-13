@@ -15,8 +15,9 @@ s = rep(NA, 10000)
 wid = 10
 for (i in 1:length(s)){
   x = runif(wid, 1, 6) #Erzeugung der Stichprobe, aus einer Verteilung
-  s[i] = mw(x) 
+  #Frage was ist EW
+  s[i] = med(x) 
 }
-hist(s)
+hist(s, 30, xlim = c(0,6), main='med')
 mean(s)
 var(s)
