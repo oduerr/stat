@@ -12,9 +12,9 @@ med = function(x){
 }
 
 s = rep(NA, 10000)
-wid = 10
+n = 10
 for (i in 1:length(s)){
-  x = runif(wid, 1, 6) #Erzeugung der Stichprobe, aus einer Verteilung
+  x = runif(n, 1, 6) #Erzeugung der Stichprobe, aus einer Verteilung
   #Frage was ist EW
   s[i] = med(x) 
 }
