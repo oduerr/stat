@@ -1,5 +1,5 @@
 x = rep(NA, 10000)
-wid = 1
+wid = 10
 for (i in 1:length(x)){
   x[i] = mean(sample(1:6, wid, replace = TRUE))
 }
@@ -9,11 +9,14 @@ plot(table(x)/length(x), type='h')
 
 
 x = rep(NA, 10000)
-wid = 1
+wid = 10
 for (i in 1:length(x)){
-  x[i] = mean(runif(wid, 1, 6))
+  x[i] = mean(rnorm(wid, 42, 10))
 }
 mean(x)
+hist(x, freq = FALSE, 30)
+library(car)
+qqPlot(x)
 
 mean(runif(100000,1,6)) # (6-1)/2
 var(x) 
