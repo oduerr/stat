@@ -1,7 +1,7 @@
 ## Matrices and Lists
 d = seq(1,12)
 m = matrix(d, nrow = 3, byrow = TRUE)
-dim(m) #3 4
+dim(m) 
 m
 
 ## Broadcasting, also in e.g. python 
