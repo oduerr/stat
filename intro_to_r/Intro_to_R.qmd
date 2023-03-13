@@ -1,5 +1,5 @@
 ---
-title: "Intro_R"
+title: "Introduction to R"
 subtitle: "Courses, BA Statistics and Data Science"
 author: "Oliver Dürr"
 format: 
@@ -22,7 +22,7 @@ format:
 
 -   Lot's of blogposts
 
-    -   [www.r-bloggers.com](www.r-bloggers.com)
+    -   [www.r-bloggers.com](https://www.r-bloggers.com)
 
 -   R for Data Science (free online book)
 
@@ -84,11 +84,11 @@ Code at [https://github.com/oduerr/stat/tree/master/intro_to_r](https://github.c
 
 # Further Data Structures
 
-## Matrices, List
+## Matrices, List {style="background-color: rgb(255, 255, 128);"}
 
 See Script part1_02_matrices_lists.R
 
-::: {.footer style="background-color: rgb(255, 255, 128);"}
+::: footer
 Code at [https://github.com/oduerr/stat/tree/master/intro_to_r](https://github.com/oduerr/stat/tree/master/intro_to_rhttps://github.com/oduerr/stat/tree/master/intro_to_r)
 :::
 
