@@ -5,7 +5,7 @@ author: "Oliver Dürr"
 format: 
   revealjs:
     #faster rendering if not embedded
-    #embed-resources: true 
+    embed-resources: true 
     theme: [default, oliver_slides.scss]
     slide-number: true
     #smaller: true  #Funktioniert nicht so gut 
@@ -15,8 +15,138 @@ format:
     #  buttons: true
     preview-links: auto
     controls-layout: edges
-    logo: ../shared_stuff/images/ios.png
-    footer: <https://www.ios.htwg-konstanz.de/>
+    footer: <https://github.com/oduerr/stat>
 ---
 
-## 
+## Further Resources
+
+-   Lot's of blogposts
+
+    -   [www.r-bloggers.com](www.r-bloggers.com)
+
+-   R for Data Science (free online book)
+
+    -   <http://r4ds.had.co.nz/>
+
+-   R is a bit weird compared to other programming languages
+
+    -   <https://www.johndcook.com/blog/r_language_for_programmers/>
+
+## R without computer
+
+**It's highly recomended to install R and RStudio on your Laptop**
+
+If there is no computer at hand:
+
+-   Colab [https://colab.research.google.com/notebook#create=true&language=r](https://colab.research.google.com/notebook#create=true&language=rhttps://colab.research.google.com/notebook#create=true&language=r)
+
+-   Kaggle Notebooks
+
+## R / Studio
+
+-   Rooted in S
+
+    -   S started 1976 in Bell Labs by John Chambers
+
+-   S Philosophy (user ==\>programmer)
+
+    -   Interactive environment without needing to do programming
+
+    -   Possible to get into programming
+
+-   R started in 1991 in as a free version of S
+
+    -   Lots of functionality via packages
+
+    -   IMO much more stable compared python with pip/conda
+
+-   RStudio is the IDE for R
+
+    -   Runs on the desktop
+
+    -   Runs remote (R-Studio Server)
+
+    -   Free but commercial support available
+
+## First Demo  {style="background-color: rgb(255, 255, 128);"}
+
+-   How to start RStudio
+
+-   The 4 Tabs
+
+-   3+4
+
+-   Explain
+
+::: footer
+Code at [https://github.com/oduerr/stat/tree/master/intro_to_r](https://github.com/oduerr/stat/tree/master/intro_to_rhttps://github.com/oduerr/stat/tree/master/intro_to_r)
+:::
+
+# Further Data Structures
+
+## Matrices, List
+
+See Script part1_02_matrices_lists.R
+
+::: {.footer style="background-color: rgb(255, 255, 128);"}
+Code at [https://github.com/oduerr/stat/tree/master/intro_to_r](https://github.com/oduerr/stat/tree/master/intro_to_rhttps://github.com/oduerr/stat/tree/master/intro_to_r)
+:::
+
+# The data structure the data.frame
+
+## The Iris Data Set
+
+![](images/image-1483701382.png)
+
+Fisher,R.A. "The use of multiple measurements in taxonomic problems" Annual Eugenics, 7, Part II, 179-188 (1936)
+
+## Demo Data Frame {style="backgroundcolor yellow"}
+
+-   Live demo part1_data_frame.R
+
+::: footer
+Code at [https://github.com/oduerr/stat/tree/master/intro_to_r](https://github.com/oduerr/stat/tree/master/intro_to_rhttps://github.com/oduerr/stat/tree/master/intro_to_r)
+:::
+
+## R and "real" programmers
+
+-   "I have written software professionally in perhaps a dozen programming languages, and the hardest language for me to learn has been R. The language is actually fairly simple, but it is unconventional."[^1]
+
+-   R is more an interactive environment for data analysis then a programming language
+
+-   Strange things
+
+    ```{r ,eval = FALSE, echo=TRUE}
+    a <- 10 
+    10 -> a
+    this.is.a.variable #no class! _ was not allowed in past
+    c(1,2,3)[1] #gives 1, it’s one based
+    ```
+
+    -   R hates warnings and even more error
+
+    -   If something works, does not mean that it worked the way you envisioned
+
+[^1]: https://www.johndcook.com/blog/r_language_for_programmers/
+
+## Loops
+
+![](images/image-258162657.png)
+
+## Conditionals and Functions
+
+![](images/image-1022292561.png)
+
+-   Functions can have:
+
+    -   named arguments
+
+    -   default values
+
+## Demo Functions and Loops {style="background-color: rgb(255, 255, 128);"}
+
+-   Live demo part1_functions.R
+
+::: footer
+Code at [https://github.com/oduerr/stat/tree/master/intro_to_r](https://github.com/oduerr/stat/tree/master/intro_to_rhttps://github.com/oduerr/stat/tree/master/intro_to_r)
+:::
