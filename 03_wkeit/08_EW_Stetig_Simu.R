@@ -1,7 +1,7 @@
-runs = 1000000
+runs = 100000
 res = sample(1:6, runs, replace = TRUE)
 table(res)
-plot(table(res))
+plot(table(res)/runs)
 table(res)/runs
 
 dat = runif(100000, 0,1) #1000 Zahlen zwischen 0 und 6
@@ -22,21 +22,25 @@ rdreieck = function(n){
 
 # Glückspiel
 # X ~ Dreiecksverteilung
-xs = rdreieck(10000)
+xs = rdreieck(100000)
 hist(xs, freq = FALSE)
 curve(2*x,0,1, add=TRUE, col='red')
 
-mean(xs) #0.67
+mean(xs^2) #0.67
 var(xs) #0.05
 
-xs = runif(10000,0,1)
-mean(sin(exp(xs)+sin(xs))) #0.6218743
 
-# Erwartungswert fuer N->Infty
-N = 100000
+
+
+N = 10000
 xs = runif(N,0,1)
-cs = cumsum(sin(exp(xs)+sin(xs)))/1:N
+mean(sin(exp(xs)+sin(xs))) #0.6218743
+# Erwartungswert fuer N->Infty
+x = sin(exp(xs)+sin(xs))
+cs = cumsum(x) / (1:N)
 plot(cs, type = 'l')
+
+
 xs = runif(N,0,1)
 cs = cumsum(sin(exp(xs)+sin(xs)))/1:N
 lines(cs, type = 'l', col='red')

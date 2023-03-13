@@ -1,0 +1,15 @@
+//https://quarto.org/docs/presentations/revealjs/themes.html#sass-variables
+/*-- scss:defaults --*/
+
+// headings
+$presentation-heading-font: "Open Sans", "Lato", sans-serif !default;
+$presentation-heading-color: #1E90FF !default;
+$presentation-heading-font-weight: 500 !default;
+
+$presentation-font-size-root: 30px;
+
+/*-- scss:rules --*/
+.reveal a {
+  line-height: 1.3em;
+}
+

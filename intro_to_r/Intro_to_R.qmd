@@ -1,0 +1,22 @@
+---
+title: "Intro_R"
+subtitle: "Courses, BA Statistics and Data Science"
+author: "Oliver Dürr"
+format: 
+  revealjs:
+    #faster rendering if not embedded
+    #embed-resources: true 
+    theme: [default, oliver_slides.scss]
+    slide-number: true
+    #smaller: true  #Funktioniert nicht so gut 
+    scrollable: true
+    # Geht nicht zum html exportieren 
+    #chalkboard: 
+    #  buttons: true
+    preview-links: auto
+    controls-layout: edges
+    logo: ../shared_stuff/images/ios.png
+    footer: <https://www.ios.htwg-konstanz.de/>
+---
+
+## 

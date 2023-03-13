@@ -1,12 +1,28 @@
+### Würfel
 x = rep(NA, 10000)
 wid = 10
 for (i in 1:length(x)){
-  x[i] = mean(sample(1:6, wid, replace = TRUE))
+  x[i] = sum(sample(1:6, wid, replace = TRUE))
+}
+hist(x, freq = FALSE)
+
+mean(x) 
+var(x)
+#plot(table(x)/length(x), type='h')
+xs = seq(20,50,0.1)
+lines(xs, dnorm(xs, mean(x), sd(x)), col='red')
+
+### unif
+x = rep(NA, 10000)
+wid = 1000
+for (i in 1:10000){
+  x[i] = mean(runif(wid,0,6))
 }
 mean(x) 
 var(x)
-plot(table(x)/length(x), type='h')
-
+hist(x, freq = FALSE)
+xs = seq(1,6,0.01)
+lines(xs, dnorm(xs, mean(x), sd(x)), col='red')
 
 x = rep(NA, 10000)
 wid = 10

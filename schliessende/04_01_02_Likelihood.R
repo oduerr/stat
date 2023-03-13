@@ -1,17 +1,58 @@
-p = 2/6
+l = 2
+p = l/6 #2 rote seiten 
 dbinom(0, 100, p)
 dbinom(34, 100, p)
 dbinom(99, 100, p)
+dbinom(100, 100, p)
 plot(0:100, dbinom(0:100, 100, p))
+#
+
+
+dbinom(34, 100, p=0/6) #Wkeit 34 mal rot zu sehen bei l=0
+dbinom(34, 100, p=1/6) #Wkeit 34 mal rot zu sehen bei l=1
+dbinom(34, 100, p=2/6) #Wkeit 34 mal rot zu sehen bei l=2
+dbinom(34, 100, p=3/6) #Wkeit 34 mal rot zu sehen bei l=2
+plot(0:6, dbinom(34, 100, (0:6)/6))
+
+
+
+
+
+
+
+
+
+
+
+
+
 #
 p = 1/6
 dbinom(34, 100, 0:6/6)
 
 likelihood = function(data, parameter_l){
+  #prob_of_data_given_paramters = dexp(data, rate=parameter_l)
   prob_of_data_given_paramters = prod(dexp(data, rate=parameter_l))
   return(prob_of_data_given_paramters)
 }
 likelihood = Vectorize(likelihood, 'parameter_l') 
+#
+pars = seq(0.0, 5, length=3000)
+likes = likelihood(3, pars)
+plot(pars, likes)
+pars[which.max(likes)]
+
+
+
+
+
+
+
+
+
+
+
+#
 pars = seq(0.01, 5, length=30000)
 likes = likelihood(data=c(3,4), pars)
 plot(pars, likes)
@@ -24,7 +65,11 @@ sum(log(runif(1000,0,1)))
 #
 
 
-
+if (FALSE){
+  install.packages("madness")
+  library(madness)
+  
+}
 
 
 
