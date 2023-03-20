@@ -1,0 +1,43 @@
+---
+title: "Strange_Things_In_R"
+author: "Oliver Dürr"
+format: html
+editor: visual
+---
+
+## The R Horror Show
+
+Don't get me wrong I like R but sometimes it drives me crazy!
+
+### Substracting 1,2 from a matix
+
+The following example took me two days (mostly since I did not spot the error):
+
+```{r}
+M = matrix(rep(c(1,2),3), ncol = 2, byrow = TRUE)
+M
+```
+
+I want to substract 1,2 from each column. So the result should be a zero matix:
+
+#### First solution
+
+```{r}
+M - c(1,2)
+```
+
+#### Substracting a column vector
+
+```{r}
+cv = matrix(rep(c(1,2),3), nrow = 3, byrow = TRUE)
+cv
+M - cv
+```
+
+#### Using Apply
+
+This is the easiest solution I came up with
+
+```{r}
+t(apply(M, 1, function(x)x-c(1,2)))
+```

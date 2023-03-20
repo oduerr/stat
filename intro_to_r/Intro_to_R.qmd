@@ -68,7 +68,7 @@ If there is no computer at hand:
 
     -   Free but commercial support available
 
-## First Demo  {style="background-color: rgb(255, 255, 128);"}
+## First Demo {style="background-color: rgb(255, 255, 128);"}
 
 -   How to start RStudio
 
