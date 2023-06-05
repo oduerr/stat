@@ -25,15 +25,15 @@ for (i in 1:length(mw.sampdist)){
 
 #Erwartungstreue
 hist(mw_2.sampdist)
-mean(mw.sampdist) #Ja
-mean(mw_2.sampdist)#Nein
-mean(med.sampdist)
+mean(mw_2.sampdist) #Nein
+mean(mw.sampdist)  #Ja
+mean(med.sampdist)#JA
 
 #MSE
 theta = 3.5
-mean((mw.sampdist - 3.5)^2)
-mean((mw_2.sampdist - 3.5)^2)
-mean((med.sampdist - 3.5)^2)
+mean((mw.sampdist - theta)^2)
+mean((mw_2.sampdist - theta)^2)
+mean((med.sampdist - theta)^2)
 var(med.sampdist)
 
 hist(med.sampdist, 30, xlim = c(0,6), main='mw_2', freq = FALSE)
