@@ -11,7 +11,7 @@ plot(0:100, dbinom(0:100, 100, p))
 dbinom(34, 100, p=0/6) #Wkeit 34 mal rot zu sehen bei l=0
 dbinom(34, 100, p=1/6) #Wkeit 34 mal rot zu sehen bei l=1
 dbinom(34, 100, p=2/6) #Wkeit 34 mal rot zu sehen bei l=2
-dbinom(34, 100, p=3/6) #Wkeit 34 mal rot zu sehen bei l=2
+dbinom(34, 100, p=3/6) #Wkeit 34 mal rot zu sehen bei l=3
 plot(0:6, dbinom(34, 100, (0:6)/6))
 
 
