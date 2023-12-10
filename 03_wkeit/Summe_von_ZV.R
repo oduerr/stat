@@ -1,10 +1,13 @@
 ### Würfel
 x = rep(NA, 10000)
-wid = 10
+wid = 100
 for (i in 1:length(x)){
-  x[i] = sum(sample(1:6, wid, replace = TRUE))
+  x[i] = mean(sample(1:6, wid, replace = TRUE))
 }
 hist(x, freq = FALSE)
+
+
+
 
 mean(x) 
 var(x)
