@@ -33,7 +33,23 @@ abline(a=0,b=1)
 
 
 #### QQPlots vs Histograms
+library(car)
+par(mfrow=c(1,2))
+qqPlot(vals)
+hist(vals)
 
+
+Theta = 42
+N = 3
+R = 10000
+
+M = rep(NA, R)
+for (i in 1:R){
+  x = rnorm(N, Theta, 1) #Ziehen der Stichprobe
+  T = mean(x) #Berechung des Schätzer
+  M[i] = (T - Theta)^2 #Quadratische Abweichung vom wahren Werte
+}
+mean(M)
 
 
 
