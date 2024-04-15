@@ -1,3 +1,13 @@
+x = c(1,3,5)
+sd(x)
+
+x = c(1,2,3,4,5)
+y = c(1.2, 2.3, 3.1, 4.2, 5.1)
+z1 = scale(x)
+z2 = scale(y)
+sum(z1*z2)/(length(x)-1)
+cor(x,y)
+
 ### Random
 n = 3
 x = rnorm(n)

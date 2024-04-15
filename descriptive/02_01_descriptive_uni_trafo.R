@@ -27,15 +27,14 @@ sd(X) * 1.8
 
 
 
-#################################
+####### Z-Trafo Form bleibt erhalten (Aufgabe ) ######
 X = rgamma(1000,shape=1)
 hist(X,100)
 z = (X-mean(X))/ sd(X)
 z=scale(X)
 hist(z,100)
 
-#################################
-# 
+#######. Demo Logarithmus ##########
 library(MASS)
 summary(Boston$crim) 
 
