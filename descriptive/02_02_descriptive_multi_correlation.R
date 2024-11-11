@@ -1,3 +1,35 @@
+n = 1000
+### Daten ####
+x1 = rnorm(n)
+x2 = 10*x1#rnorm(n) 
+
+### Z-Trafo####
+z1 = scale(x1)
+z2 = scale(x2)
+plot(z1,z2)
+### Berechung des Korrelations Koeffizienten (nach Pearson)####
+sum(z1*z2)/(n-1)
+
+### In R ###
+cor(x1,x2)
+
+x = c(-1,40,3,2.1)
+y = c(1,4,3,-20000)
+
+x = 1:100
+y = x^2
+cor(x,y)
+cor(x,y, method = 'spearman')
+
+xy = matrix(runif(2*1000), ncol=2)
+plot(xy)
+### Rotate about 30 Degrees
+theta = 30
+rot = matrix(c(cos(theta), -sin(theta), sin(theta), cos(theta)), ncol=2)
+xy_rot = xy %*% rot
+plot(xy_rot)
+cor(xy_rot[,1], xy_rot[,2])
+
 x = c(1,3,5)
 sd(x)
 
@@ -19,13 +51,19 @@ for (i in 1:10) {
   print(cor(rnorm(n), rnorm(n))) 
 }
 
+n = 50
+for (i in 1:10) {
+  print(cor(rnorm(n), rnorm(n))) 
+}
+
 
 
 ### Random
-n = 3000
+n = 3
 groesse = rnorm(n, 150, 10)
 hist(groesse)
-armspanne =  rnorm(n, 150, 30)
+mean(groesse)
+armspanne = rnorm(n, 0, 100000) #1.05*groesse + rnorm(n, 0, 100000)
 plot(groesse, armspanne)
 cor(groesse, armspanne)
 

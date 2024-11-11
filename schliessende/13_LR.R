@@ -17,24 +17,25 @@ res = lm(yi ~ xi)
 
 ##### Daten für LR aus Normaverteilung
 
-inter = slope = rep(NA, 1000)
-for (i in 1:1000) {
-  xs = seq(1,10,0.5/4)
-  steigung = 1.2
-  yachs = 0.5
-  mu = xs * steigung + yachs
-  y = mu
-  y = rnorm(length(xs), mu, 1.42)
-  #plot(xs, y)
-  res = lm(y ~ xs)
-  inter[i] = res$coefficients[1]
-  slope[i] = res$coefficients[2]
+xi = seq(1,10,0.5) #X-Werte
+n = length(xi)
+yi = rnorm(n,mean=1*xi+2, sd = 0.5) #DGP
+#Simulation mit vielen Wdh. (für Aufgabe)
+inters = rep(NA, 1000)
+slopes = rep(NA, 1000)
+for (i in 1:length(inters)){  
+  yi = rnorm(n,mean=1*xi+2, sd = 0.5) #DGP
+  res = lm(yi ~ xi)  
+  inters[i] = res$coefficients[1]  
+  slopes[i] = res$coefficients[2]
 }
-hist(inter,50)
-mean(inter) 
 
-hist(slope,50)
-mean(slope) 
+
+hist(inters,50)
+mean(inters) 
+
+hist(slopes,50)
+mean(slopes) 
 sd(slope)  #0.122
 
 
@@ -79,4 +80,18 @@ mean(slopes)
 sd(slopes)
 
 in_ci / 1000 
+
+
+
+X = data.frame(matrix(rnorm(12), ncol=3), Y = rnorm(4))
+lm(Y ~ X1+X2+X3, data=X)
+
+
+
+
+
+
+
+
+
 

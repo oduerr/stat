@@ -2,6 +2,9 @@
 3+3
 
 a=3 #a <- 3 ist auch möglich
+a <- 3
+
+
 b=a*4
 b
 # Creating vectors

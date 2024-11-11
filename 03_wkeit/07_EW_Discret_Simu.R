@@ -22,9 +22,8 @@ sum(p * g)
 
 ### Würfel###
 set.seed(42)
-N = 1e6
+N = 10e6
 x = sample(1:6, N, replace = TRUE)
-x
 #Abschaetzung von EW
 mean(x) #3.5052
 #Erwartungswerte von X^2
@@ -54,19 +53,24 @@ for (n in 1:N){
   }  
 }
 mean(gewinn)
-hist(gewinn, breaks = 50)
+plot(table(gewinn)/N, xlim = c(0,40))
+#hist(gewinn, breaks = 50)
 
 hist(gewinn,100)
 plot(table(gewinn))
 mean(gewinn)
 #Ist Geometrische Verteilung, dort ist mean = 1/p
 
+pbinom(0:10, 10, 0.8)
+d = round(pbinom(0:10, 10, 0.8),3)
+names(d) = 0:10
+d
 
 # Bionomial Party ######
 k = 0:10
 df = data.frame(
-  p = dbinom(k, 10, 0.8), #80% kommen
-  f = pbinom(k, 10, 0.8)
+  k = dbinom(k, 10, 0.8), #80% kommen
+  P = pbinom(k, 10, 0.8)
 )
 df = t(df)
 colnames(df) = k

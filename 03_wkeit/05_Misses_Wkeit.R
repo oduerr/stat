@@ -32,6 +32,11 @@ sum(x12 > 8) / n #Schätzung nach Mises
 10/36
 
 
+res = sample(1:5) 
+sum(res == 1:5) 
+
+
+
 #Kombinatorik
 expand.grid(1:2, 4:5)
 library(combinat)
@@ -65,6 +70,7 @@ for (i in 1:N){
   erg[i] = sum(res == 1:P) > 0
 }
 sum(erg)/N
+
 1 - 1/exp(1)
 
 

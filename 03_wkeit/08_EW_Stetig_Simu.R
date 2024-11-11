@@ -36,6 +36,7 @@ var(xs) #0.05
 N = 10000
 xs = runif(N,0,1)
 mean(sin(exp(xs)+sin(xs))) #0.6218743
+
 # Erwartungswert fuer N->Infty
 x = sin(exp(xs)+sin(xs))
 cs = cumsum(x) / (1:N)
@@ -46,5 +47,7 @@ xs = runif(N,0,1)
 cs = cumsum(sin(exp(xs)+sin(xs)))/1:N
 lines(cs, type = 'l', col='red')
 
+# Numerische Intergration (Probe)
+integrate(function(x) sin(exp(x)+sin(x)), 0, 1)
 
 

@@ -8,6 +8,23 @@ plot(0:100, dbinom(0:100, 100, p))
 #
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 
 dbinom(34, 100, p=0/6) #Wkeit 34 mal rot zu sehen bei l=0
 dbinom(34, 100, p=1/6) #Wkeit 34 mal rot zu sehen bei l=1
 dbinom(34, 100, p=2/6) #Wkeit 34 mal rot zu sehen bei l=2
@@ -36,6 +53,31 @@ likelihood = function(data, parameter_l){
   return(prob_of_data_given_paramters)
 }
 likelihood = Vectorize(likelihood, 'parameter_l') 
+likelihood(data = 3, parameter_l = seq(0,10,0.01))
+
+ls = seq(0,10,0.01)
+which.max(likelihood(data = 3, parameter_l = ls))
+ls[34]
+
+
+
+max = -Inf
+for (l in seq(0,10,0.01)){
+  if (likelihood(data = 3, parameter_l = l) > max){
+    max = likelihood(data = 3, parameter_l = l)
+    print(l)
+  }
+}
+
+
+set.seed(123)
+data <- rpois(1000, lambda = 150)
+pois_likelihood <- function(lambda, data) {
+  -sum(dpois(data, lambda, log = TRUE))
+}
+pois_likelihood(109, data)
+optim(fn = pois_likelihood, par = 109, data = data)
+mean(data)
 #
 pars = seq(0.0, 5, length=3000)
 likes = likelihood(3, pars)
@@ -43,6 +85,9 @@ plot(pars, likes)
 pars[which.max(likes)]
 
 
+
+p = rep(0.1, 320)
+prod(p)
 
 
 

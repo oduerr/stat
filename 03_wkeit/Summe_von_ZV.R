@@ -1,16 +1,25 @@
+wuerfe = rep(NA, 10000)
+for (i in 1:10000){
+  wuerfe[i] = sum(sample(1:6, 100, replace = TRUE))
+}
+mean(wuerfe)
+sd(wuerfe) #1.70 bei N = 1
+
+plot(table(wuerfe)/10000)
+
+
+
+
 ### Würfel
 x = rep(NA, 10000)
 wid = 100
 for (i in 1:length(x)){
-  x[i] = mean(sample(1:6, wid, replace = TRUE))
+  x[i] = sum(sample(1:6, wid, replace = TRUE))
 }
 hist(x, freq = FALSE)
-
-
-
-
 mean(x) 
 var(x)
+
 #plot(table(x)/length(x), type='h')
 xs = seq(20,50,0.1)
 lines(xs, dnorm(xs, mean(x), sd(x)), col='red')

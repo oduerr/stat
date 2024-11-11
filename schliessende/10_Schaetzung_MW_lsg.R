@@ -16,10 +16,11 @@ n = 10
 for (i in 1:length(s)){
   x = runif(n, 1, 6) #Erzeugung der Stichprobe, aus einer Verteilung
   #Frage was ist EW
-  s[i] = mw_2(x) 
+  s[i] = med(x) 
 }
 hist(s, 30, xlim = c(0,6), main='mw_2')
-mean((s-3.5)^2)
+mean(s)
+mean((s-3.5)^2) #0.2
 
 
 
