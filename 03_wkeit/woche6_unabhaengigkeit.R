@@ -12,4 +12,4 @@ df = data.frame(
   Pclass = rep(1:3, c(226, 187, 478))
 )
 tab = table(df$Pclass, df$Survived) 
-plot(t(tab), main='Simuliert mit unabhängiger Überlebensrate')
+plot(tab, main='Simuliert mit unabhängiger Überlebensrate')
