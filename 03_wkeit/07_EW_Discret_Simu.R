@@ -1,4 +1,29 @@
 ### Code für die Vorlesung in der 7. Woche
+
+N = 10000000
+x = sample(1:6, replace = TRUE, size = N)
+sum(x == 4) / N
+1/6
+################################
+# PMF und CDF             ######
+w = sample(1:6, replace = TRUE, size=1e6)
+par(mfrow=c(1,1))
+# PMF
+plot(table(w)/100, type='h')
+# CDF
+plot(ecdf(w))
+
+
+# Würfeln
+set.seed(42)
+N=1e6
+X = sample(1:6,N, replace = TRUE)
+mean(X) #3.4998 
+avg = cumsum(X)/1:N #Gleitender MW
+plot(1:N, avg, type = 'l')
+abline(h=3.5, col='red')
+
+
 ################################
 # Spielautomatsverteilung ######
 ps = c(0.977, 0.008, 0.008, 0.006, 0.001)
@@ -22,7 +47,7 @@ sum(p * g)
 
 ### Würfel###
 set.seed(42)
-N = 10e6
+N = 100000
 x = sample(1:6, N, replace = TRUE)
 #Abschaetzung von EW
 mean(x) #3.5052
@@ -41,7 +66,7 @@ mean(xg * x^2)#9.38124
 56/6 #9.33333
 
 # Würfel mit Aufhören ######
-N = 1e4
+N = 1e7
 gewinn = rep(0, N)
 for (n in 1:N){
   for (i in 1:1e8){ #Im wievielten versuch kommt die 6?

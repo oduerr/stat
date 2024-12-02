@@ -6,7 +6,7 @@ plot(table(res)/runs)
 table(res)/runs
 
 #Stetige
-dat = runif(100000, 0,1) #1000 Zahlen zwischen 0 und 6
+dat = runif(100000, 0,1) #1000 Zahlen zwischen 0 und 1
 hist(dat, freq = FALSE, breaks = 1)
 hist(dat, freq = FALSE, breaks = 2)
 hist(dat, freq = FALSE, breaks = 10)
@@ -33,9 +33,15 @@ var(xs) #0.05
 
 
 # Aufgabe Simulation
-N = 10000
+N = 100000
 xs = runif(N,0,1)
+hist(xs, freq = FALSE)
+abline(h=1, col='red')
+
 mean(sin(exp(xs)+sin(xs))) #0.6218743
+
+# Numerische Intergration (Probe)
+integrate(function(x) sin(exp(x)+sin(x)), 0, 1)
 
 # Erwartungswert fuer N->Infty
 x = sin(exp(xs)+sin(xs))
@@ -47,7 +53,5 @@ xs = runif(N,0,1)
 cs = cumsum(sin(exp(xs)+sin(xs)))/1:N
 lines(cs, type = 'l', col='red')
 
-# Numerische Intergration (Probe)
-integrate(function(x) sin(exp(x)+sin(x)), 0, 1)
 
 
