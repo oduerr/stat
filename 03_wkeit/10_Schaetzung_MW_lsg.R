@@ -14,7 +14,7 @@ med = function(x){
 
 mw.sampdist = med.sampdist = mw_2.sampdist = rep(NA, 10000)
 
-n = 500
+n = 5
 for (i in 1:length(mw.sampdist)){
   x = runif(n, 1, 6) #Erzeugung der Stichprobe, aus einer Verteilung
   #Frage was ist EW

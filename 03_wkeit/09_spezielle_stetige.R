@@ -1,9 +1,22 @@
+### Quantile
+##
+xs = seq(-3, 3, length.out = 1000)
+plot(xs,dunif(xs,-2,2), type = "l", col = "blue", lwd = 2, main = 'pdf')
+plot(xs,punif(xs,-2,2), type = "l", col = "blue", lwd = 2, main = 'cdf')
+punif(-2,-2,2)
+punif(2,-2,2)
+punif(0,-2,2)
+
+qs = seq(0,1, length.out = 1000)
+plot(qs,qunif(qs,-2,2), type = "l", col = "blue", lwd = 2, main = 'quantile')
+
 dunif(0.5, min=2, max=5)
 punif(4, min=2, max=5)
 runif(10, min=2, max=5)
-hist(runif(1e4, min=2, max=5), freq = FALSE)
+hist(runif(1e6, min=2, max=5), freq = FALSE)
 qunif(0.5, min=2, max=5)
 qunif(0.00000001, min=2, max=5)
+
 
 
 #### IQ -----
@@ -13,6 +26,16 @@ pnorm(130, mean = 100, sd = 15) - pnorm(70, mean = 100, sd = 15)
 qnorm(0.9, mean = 100, sd = 15)
 
 #Siehe Summe_von_ZV.R
+
+N = 3000
+x = rexp(N, rate=0.25)
+vals = sort(x)
+
+qs = (1:N)/(N+1)
+quantils_exp = qexp(qs, rate=1.0)
+quantils_exp = qnorm(qs, mean=0, sd=1)
+
+plot(quantils_exp, vals)
 
 
 ### QQPlot 

@@ -42,7 +42,11 @@ Likelihood maximieren wollen).
 3.  Verwenden Sie die Funktion `optim` in R, um den Lambda-Parameter für
     Ihre Daten zu schätzen:
 
-In diesem Code ist `par = 1` die erste Vermutung für Lambda,
+``` r
+result <- optim(par = 1, fn = pois_likelihood, data = data, method = "BFGS")
+```
+
+In diesem Code ist `par = 1` die erste Vermutung für Lambda (Startwert),
 `fn = pois_likelihood` ist die zu minimierende Funktion (die negative
 Log-Likelihood), und `method = "BFGS"` gibt den zu verwendenden
 Optimierungsalgorithmus an.
@@ -53,8 +57,6 @@ Optimierungsalgorithmus an.
 lambda_hat <- result$par
 print(lambda_hat)
 ```
-
-    ## [1] 149.4911
 
 5.  Vergleichen Sie das geschätzte Lambda mit dem wahren Lambda, das zur
     Generierung der Daten verwendet wurde.
