@@ -26,7 +26,7 @@ In R können wir diese Funktion definieren als:
 
 ```{r}
 pois_likelihood <- function(lambda, data) {
-  -sum(dpois(data, lambda, log = TRUE))
+  -sum(log(dpois(data, lambda)))
 }
 ```
 
@@ -35,7 +35,7 @@ Beachten Sie, dass wir die negative Log-Likelihood verwenden, da Optimierer in R
 3.  Verwenden Sie die Funktion `optim` in R, um den Lambda-Parameter für Ihre Daten zu schätzen:
 
 ```{r}
-result <- optim(par = 1, fn = pois_likelihood, data = data, method = "BFGS")
+result <- optim(par = 30, fn = pois_likelihood, data = data, method = "BFGS")
 ```
 
 In diesem Code ist `par = 1` die erste Vermutung für Lambda (Startwert), `fn = pois_likelihood` ist die zu minimierende Funktion (die negative Log-Likelihood), und `method = "BFGS"` gibt den zu verwendenden Optimierungsalgorithmus an.

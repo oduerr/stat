@@ -32,8 +32,8 @@ qqPlot(t, distribution="t", df=3)
 
 ####### Aufgabe Cafe #####
 x = c(104,103,107,105,102,109,105,104,106)
-mean(x)-qt(1-0.025,9-1) * sd(x)/sqrt(9) 
-mean(x)+qt(1-0.025,9-1) * sd(x)/sqrt(9) 
+mean(x)-qt(1-0.025,9-1) * sd(x)/sqrt(9) #103.3694
+mean(x)+qt(1-0.025,9-1) * sd(x)/sqrt(9)  #106.6306
 
 t.test(x, conf.level = 0.95)
 #t.test(x, alternative="two.sided", conf.level=0.95) default values

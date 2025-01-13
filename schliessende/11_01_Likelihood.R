@@ -1,14 +1,29 @@
-l = 2
+l = 2 # Anzahl der Roten
 p = l/6 #2 rote seiten 
 dbinom(0, 100, p)
 dbinom(34, 100, p)
 dbinom(99, 100, p)
 dbinom(100, 100, p)
-plot(0:100, dbinom(0:100, 100, p))
+plot(0:100, dbinom(0:100, 100, p), type='h')
 #
 
 
 
+
+wuerfel = function(l, p){
+  return(dbinom(l, 100, p))
+}
+p = 2/6
+wuerfel(0, p)
+wuerfel(34, p)
+wuerfel(99, p)
+wuerfel(100, p)
+#
+wuerfel(34,0:6/6)
+
+plot(0:6, wuerfel(34, (0:6)/6))
+
+#
 
 
 
@@ -46,19 +61,48 @@ plot(0:6, dbinom(34, 100, (0:6)/6))
 #
 p = 1/6
 dbinom(34, 100, 0:6/6)
-
+#
 likelihood = function(data, parameter_l){
   #prob_of_data_given_paramters = dexp(data, rate=parameter_l)
   prob_of_data_given_paramters = prod(dexp(data, rate=parameter_l))
   return(prob_of_data_given_paramters)
 }
+likelihood(3, 0:2)
 likelihood = Vectorize(likelihood, 'parameter_l') 
-likelihood(data = 3, parameter_l = seq(0,10,0.01))
+likelihood(3, 0:2)
+likelihood(data = 3, parameter_l = seq(0,10,0.5))
+# Gesucht ist die Maximum Likelihood Lösung / Schätzung
+
+parameter_l = seq(0,10,0.001)
+plot(parameter_l, likelihood(data = 3, parameter_l = parameter_l), xlim = c(0,1))
+#
+l = likelihood(data = 3, parameter_l = parameter_l)
+which(l == max(l))
+parameter_l[334]
+#
+
+prod(runif(1000))
+
+sum(log(runif(1000)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ls = seq(0,10,0.01)
 which.max(likelihood(data = 3, parameter_l = ls))
 ls[34]
-
 
 
 max = -Inf
@@ -68,6 +112,7 @@ for (l in seq(0,10,0.01)){
     print(l)
   }
 }
+
 
 
 set.seed(123)
