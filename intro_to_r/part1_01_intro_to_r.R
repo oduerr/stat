@@ -1,7 +1,7 @@
 # Mein erstes R-Skript
 3+3
 
-a=3 #a <- 3 ist auch möglich
+a = 3 #a <- 3 ist auch möglich
 a <- 3
 
 
@@ -18,6 +18,8 @@ vv = 2:4
 v[2:4]
 v[-2] #All but second
 v[-(c(1,3))]# All but 1 and 3
+
+43 -> D
 
 # Sequences
 v2=c(1,7:9)

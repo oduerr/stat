@@ -17,7 +17,7 @@ res = lm(yi ~ xi)
 
 ##### Daten für LR aus Normaverteilung
 
-xi = seq(1,10,0.5) #X-Werte
+xi = seq(1,10,0.05) #X-Werte
 n = length(xi)
 yi = rnorm(n,mean=1*xi+2, sd = 0.5) #DGP
 #Simulation mit vielen Wdh. (für Aufgabe)
@@ -31,12 +31,17 @@ for (i in 1:length(inters)){
 }
 
 
+confint(res, conf.level=0.6)[1,1]
+
+
+
 hist(inters,50)
 mean(inters) 
+sd(inters)
 
 hist(slopes,50)
 mean(slopes) 
-sd(slope)  #0.122
+sd(slopes)  
 
 
 
