@@ -12,13 +12,17 @@ plot(table(wuerfe)/10000)
 
 ### Würfel
 x = rep(NA, 10000)
-wid = 100
+wid = 2
 for (i in 1:length(x)){
   x[i] = sum(sample(1:6, wid, replace = TRUE))
 }
 hist(x, freq = FALSE)
 mean(x) 
 var(x)
+
+
+
+
 
 #plot(table(x)/length(x), type='h')
 xs = seq(20,50,0.1)

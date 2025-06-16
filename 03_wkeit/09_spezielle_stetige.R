@@ -8,7 +8,7 @@ punif(2,-2,2)
 punif(0,-2,2)
 
 qs = seq(0,1, length.out = 1000)
-plot(qs,qunif(qs,-2,2), type = "l", col = "blue", lwd = 2, main = 'quantile')
+plot(qs,qunif(qs,-2,2), type = "l", col = "blue", lwd = 2, main = 'quantile')O
 
 dunif(0.5, min=2, max=5)
 punif(4, min=2, max=5)
@@ -16,6 +16,13 @@ runif(10, min=2, max=5)
 hist(runif(1e6, min=2, max=5), freq = FALSE)
 qunif(0.5, min=2, max=5)
 qunif(0.00000001, min=2, max=5)
+
+##### Quantilsfunktion
+xs = seq(-3,3, length.out = 1000)
+plot(xs, pnorm(xs), type = "l", col = "blue", lwd = 2, main = 'cdf')
+xs = seq(0,1, length.out = 1000)
+plot(xs, qnorm(xs), type = "l", col = "blue", lwd = 2, main = 'Quantilsfunktion')
+
 
 
 

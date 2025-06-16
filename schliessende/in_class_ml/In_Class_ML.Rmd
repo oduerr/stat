@@ -38,7 +38,7 @@ Beachten Sie, dass wir die negative Log-Likelihood verwenden, da Optimierer in R
 result <- optim(par = 30, fn = pois_likelihood, data = data, method = "BFGS")
 ```
 
-In diesem Code ist `par = 1` die erste Vermutung für Lambda (Startwert), `fn = pois_likelihood` ist die zu minimierende Funktion (die negative Log-Likelihood), und `method = "BFGS"` gibt den zu verwendenden Optimierungsalgorithmus an.
+In diesem Code ist `par = 30` die erste Vermutung für Lambda (Startwert), `fn = pois_likelihood` ist die zu minimierende Funktion (die negative Log-Likelihood), und `method = "BFGS"` gibt den zu verwendenden Optimierungsalgorithmus an.
 
 4.  Drucken Sie das geschätzte Lambda:
 

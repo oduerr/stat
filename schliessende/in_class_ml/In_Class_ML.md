@@ -43,10 +43,10 @@ Likelihood maximieren wollen).
     Ihre Daten zu schätzen:
 
 ``` r
-result <- optim(par = 1, fn = pois_likelihood, data = data, method = "BFGS")
+result <- optim(par = 30, fn = pois_likelihood, data = data, method = "BFGS")
 ```
 
-In diesem Code ist `par = 1` die erste Vermutung für Lambda (Startwert),
+In diesem Code ist `par = 30` die erste Vermutung für Lambda (Startwert),
 `fn = pois_likelihood` ist die zu minimierende Funktion (die negative
 Log-Likelihood), und `method = "BFGS"` gibt den zu verwendenden
 Optimierungsalgorithmus an.

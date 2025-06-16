@@ -13,76 +13,54 @@ plot(0:100, dbinom(0:100, 100, p), type='h')
 wuerfel = function(l, p){
   return(dbinom(l, 100, p))
 }
+wuerfel(l=0, p=2/6)
+# Wie Wahrscheinlich ist es dass man 34 rote Seiten sieht bei 100 Würfen
+# wenn die Anzahl der roten Seiten l varieneren.
+wuerfel(l=34, p=0/6)
+
+
+
+
+
+
+
+
+
+
+
+#
 p = 2/6
 wuerfel(0, p)
 wuerfel(34, p)
 wuerfel(99, p)
 wuerfel(100, p)
 #
-wuerfel(34,0:6/6)
-
-plot(0:6, wuerfel(34, (0:6)/6))
-
-#
+wuerfel(l=34, p=0:6/6) #Wkeit 34 mal rot zu sehen bei l=0,1,2,...,6
+plot(0:6, wuerfel(l=34, p=0:6/6), type='h')
+points(0:6, wuerfel(l=34, p=0:6/6))
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-# 
-dbinom(34, 100, p=0/6) #Wkeit 34 mal rot zu sehen bei l=0
-dbinom(34, 100, p=1/6) #Wkeit 34 mal rot zu sehen bei l=1
-dbinom(34, 100, p=2/6) #Wkeit 34 mal rot zu sehen bei l=2
-dbinom(34, 100, p=3/6) #Wkeit 34 mal rot zu sehen bei l=3
-plot(0:6, dbinom(34, 100, (0:6)/6))
-
-
-
-
-
-
-
-
-
-
-
-
-
-#
-p = 1/6
-dbinom(34, 100, 0:6/6)
 #
 likelihood = function(data, parameter_l){
-  #prob_of_data_given_paramters = dexp(data, rate=parameter_l)
+  prob_of_data_given_paramters = dexp(data, rate=parameter_l)
   prob_of_data_given_paramters = prod(dexp(data, rate=parameter_l))
   return(prob_of_data_given_paramters)
 }
-likelihood(3, 0:2)
 likelihood = Vectorize(likelihood, 'parameter_l') 
-likelihood(3, 0:2)
-likelihood(data = 3, parameter_l = seq(0,10,0.5))
-# Gesucht ist die Maximum Likelihood Lösung / Schätzung
 
-parameter_l = seq(0,10,0.001)
+likelihood(c(3,2), 0:2)
+parameter_l = seq(0,10,0.01)
+likelihood(c(3,2), parameter_l)
 plot(parameter_l, likelihood(data = 3, parameter_l = parameter_l), xlim = c(0,1))
 #
 l = likelihood(data = 3, parameter_l = parameter_l)
 which(l == max(l))
-parameter_l[334]
+parameter_l[34]
 #
 
+plot(parameter_l, log(likelihood(data = 3, parameter_l = parameter_l)), xlim = c(0,1),ylim = c(-5,0))
 prod(runif(1000))
-
 sum(log(runif(1000)))
 
 
