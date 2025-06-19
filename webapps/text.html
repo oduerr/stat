@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebR Demo</title>
+    <script type="module">
+        import { WebR } from "https://webr.r-wasm.org/latest/webr.mjs";
+        
+        async function runR() {
+            const webR = new WebR();
+            await webR.init(); // WebR starten
+            
+            const result = await webR.evalR("summary(rnorm(100))");
+            document.getElementById("output").innerText = await result.toString();
+        }
+        
+        window.onload = () => {
+            document.getElementById("runButton").addEventListener("click", runR);
+        };
+    </script>
+</head>
+<body>
+    <h1>WebR Demo: R im Browser</h1>
+    <button id="runButton">R Code ausführen</button>
+    <pre id="output">Hier erscheint das R-Ergebnis...</pre>
+</body>
+</html>

@@ -41,3 +41,12 @@ stat.Rproj
 
 intro_to_r/Intro_to_R.html
 .DS_Store
+*.log
+*.aux
+*.fdb_latexmk
+*.fls
+*.nav
+*.out
+*.snm
+*.gz
+*.toc
