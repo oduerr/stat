@@ -1,4 +1,10 @@
-load("~/Dropbox/__HTWG/Statistic/Stat_HS2018/handouts/inference/LR/unique2010.rda")
+b0 = -1197682
+b1 = 138.8
+x = c(20100, 24000, 5000)
+b0 + b1 * x
+
+
+load("/Users/oli/Library/CloudStorage/Dropbox/__HTWG/Statistic/__current/handouts/inference/LR/unique2010.rda")
 res = lm(Pax ~ ATM, data=unique2010)
 predict(res,data.frame(ATM=c(20100, 24000, 5000)))
 plot(Pax ~ ATM, data=unique2010)
