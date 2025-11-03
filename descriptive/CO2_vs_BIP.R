@@ -26,6 +26,21 @@ plot(gdp, co2,
      xlab = "GDP per Capita (USD)",
      ylab = "CO2 Emissions per Capita (tons)",
      pch = 19, col = "blue")
+
+plot(scale(gdp), scale(co2),
+     main = "CO2 Emissions vs. GDP per Capita",
+     xlab = "GDP per Capita scaled",
+     ylab = "CO2 Emissions per Capita  scaled",
+     pch = 19, col = "blue")
+
+z1 = (gdp - mean(gdp))/sd(gdp)
+z2 = (co2 - mean(co2))/sd(co2)
+
+# Correlation calculation
+sum(z1 * z2)/(length(gdp)-1)
+# Alternatively directly in R
+cor(gdp, co2)
+
 text(df$gdp_per_capita, df$co2_per_capita, labels = df$country, pos = 4, cex = 0.7)
 text(df$gdp_per_capita[9], df$co2_per_capita[9], "Norway", pos = 2, cex = 0.7)  # left of the dot
 
