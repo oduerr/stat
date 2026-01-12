@@ -23,6 +23,7 @@ avg = cumsum(X)/1:N #Gleitender MW
 plot(1:N, avg, type = 'l')
 abline(h=3.5, col='red')
 
+xs = sample(c(1,0), 1000, replace=TRUE, prob=c(0.7,0.3))
 
 ################################
 # Spielautomatsverteilung ######
@@ -66,7 +67,7 @@ mean(xg * x^2)#9.38124
 56/6 #9.33333
 
 # Würfel mit Aufhören ######
-N = 1e7
+N = 1e5
 gewinn = rep(0, N)
 for (n in 1:N){
   for (i in 1:1e8){ #Im wievielten versuch kommt die 6?
@@ -78,6 +79,7 @@ for (n in 1:N){
   }  
 }
 mean(gewinn)
+
 plot(table(gewinn)/N, xlim = c(0,40))
 #hist(gewinn, breaks = 50)
 

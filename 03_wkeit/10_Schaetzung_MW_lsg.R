@@ -14,7 +14,7 @@ med = function(x){
 
 mw.sampdist = med.sampdist = mw_2.sampdist = rep(NA, 10000)
 
-n = 5
+n = 50
 for (i in 1:length(mw.sampdist)){
   x = runif(n, 1, 6) #Erzeugung der Stichprobe, aus einer Verteilung
   #Frage was ist EW
@@ -28,6 +28,9 @@ hist(mw_2.sampdist)
 mean(mw_2.sampdist) #Nein
 mean(mw.sampdist)  #Ja
 mean(med.sampdist)#JA
+
+
+
 
 #MSE
 theta = 3.5

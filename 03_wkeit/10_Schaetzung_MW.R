@@ -15,7 +15,6 @@ s = rep(NA, 100000)
 n = 5
 for (i in 1:length(s)){
   x = runif(n, 1, 6) #Erzeugung der Stichprobe, aus einer Verteilung
-  #Frage was ist EW
   s[i] = mw_2(x) 
 }
 mean(s)

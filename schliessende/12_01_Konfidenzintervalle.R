@@ -1,8 +1,23 @@
+#### Überprüfung z ~ N(0,1)
+sigma = 1.42 #bekannt
+mu = 42#bekannt
+n = 30
+repeats = 100000
+zs = vector("numeric", repeats)
+for (i in 1:repeats){
+  x = rnorm(n, mean = mu, sd = sigma)
+  z = (mean(x)-mu)/(sigma/sqrt(n))
+  zs[i] = z
+}
+hist(zs)
+car::qqPlot(zs)
+mean(zs) #~0
+sd(zs) #~1
+
+
 alpha = 0.0001
 1-alpha 
 qnorm(1-alpha/2)
-
-
 
 
 n = 3
