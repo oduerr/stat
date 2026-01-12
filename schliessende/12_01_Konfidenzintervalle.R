@@ -13,6 +13,27 @@ hist(zs)
 car::qqPlot(zs)
 mean(zs) #~0
 sd(zs) #~1
+quantile(zs, c(0.025, 0.975)) # ~ -1.96 , 1.96
+qnorm(c(0.025, 0.975)) # -1.96 (Theorie)
+
+#### Überprüfung t ~ df(0,1)
+sigma_sim = 1.42 #für Simulation 
+mu = 42#bekannt
+n = 5
+repeats = 100000
+zs = vector("numeric", repeats)
+for (i in 1:repeats){
+  x = rnorm(n, mean = mu, sd = sigma_sim)
+  sigma = sd(x) ## <--- aus den Daten geschätzt
+  z = (mean(x)-mu)/(sigma/sqrt(n))
+  zs[i] = z
+}
+hist(zs)
+car::qqPlot(zs, distribution="t", df=n-1)
+mean(zs) #~0
+sd(zs) #~1
+quantile(zs, c(0.025, 0.975)) # ~ -1.96 , 1.96
+qt(c(0.025, 0.975), df=n-1) # -1.96 (Theorie)
 
 
 alpha = 0.0001
